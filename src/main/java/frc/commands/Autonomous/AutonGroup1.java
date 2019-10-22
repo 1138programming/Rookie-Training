@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
 
 import frc.subsystems.DriveSubsystem;
-import frc.subsystems.HatchSubsystem;
 
 public class AutonGroup1 extends CommandGroup {
   public AutonGroup1() {

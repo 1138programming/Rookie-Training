@@ -4,21 +4,20 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.commands.Arm.ArmControl;
+import frc.commands.Claw.ClawControl;
 import frc.robot.Robot;
 
-public class ArmSubsystem extends Subsystem {
+public class ClawSubsystem extends Subsystem {
   // Talon config
-  private final TalonSRX Arm;
-  private static final int KArm = 4;
+  private final TalonSRX Claw;
+  private static final int KClaw = 5;
 
-  public ArmSubsystem() {
-    // Initialize talons
-    Arm = new TalonSRX(KArm);
+  public ClawSubsystem() {
+    Claw = new TalonSRX(KClaw);
   }
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new ArmControl());
+    setDefaultCommand(new ClawControl());
   }
 }

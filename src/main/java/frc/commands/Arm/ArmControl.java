@@ -1,11 +1,11 @@
-package frc.commands.Drive;
+package frc.commands.Arm;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ShiftDrive extends Command {
-	public ShiftDrive() {
-		requires(Robot.DRIVE_SUBSYSTEM);
+public class ArmControl extends Command {
+	public ArmControl() {
+		requires(Robot.ARM_SUBSYSTEM);
 	}
 
 	@Override
@@ -14,16 +14,15 @@ public class ShiftDrive extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.DRIVE_SUBSYSTEM.toggleShift();
 	}
 
 	@Override
 	protected boolean isFinished() {
-		return true;
+		return false;
 	}
 
 	@Override
-	protected void end(){
+	protected void end() {
 	}
 
 	@Override

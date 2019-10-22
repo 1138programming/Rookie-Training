@@ -1,11 +1,11 @@
-package frc.commands.Arm;
+package frc.commands.Claw;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ArmStop extends Command {
-	public ArmStop() {
-		requires(Robot.ARM_SUBSYSTEM);
+public class ClawControl extends Command {
+	public ClawControl() {
+		requires(Robot.CLAW_SUBSYSTEM);
 	}
 
 	@Override
@@ -14,7 +14,6 @@ public class ArmStop extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.ARM_SUBSYSTEM.moveArm(0, 0);
 	}
 
 	@Override

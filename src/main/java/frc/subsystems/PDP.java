@@ -9,7 +9,6 @@ package frc.subsystems;
 
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.commands.RegulateVoltageSpike;
 import edu.wpi.first.hal.PDPJNI;
 
 
@@ -31,7 +30,7 @@ public class PDP extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new RegulateVoltageSpike());
+    //setDefaultCommand(new RegulateVoltageSpike());
   }
 
   public void voltageSpikeRegulation() { //ASK PAULINE OR BASI 
