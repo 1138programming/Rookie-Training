@@ -20,10 +20,21 @@ public class DriveSubsystem extends Subsystem {
   {
     driveLeft = new TalonSRX(KDriveLeftTalon);
     driveRight = new TalonSRX(KDriveRightTalon);
+
+    driveRight.set(ControlMode.PercentOutput, 1);
   }
 
   @Override
   public void initDefaultCommand() {
    setDefaultCommand(new DriveWithJoysticks());
+  }
+  public void run()
+  {
+    //move();
+  }
+  public void move(double rightSpeed, double leftSpeed)
+  {
+    driveRight.set(ControlMode.PercentOutput, rightSpeed);
+    driveLeft.set(ControlMode.PercentOutput, leftSpeed);
   }
 }

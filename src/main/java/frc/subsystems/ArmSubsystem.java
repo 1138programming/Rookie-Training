@@ -21,4 +21,7 @@ public class ArmSubsystem extends Subsystem {
   public void initDefaultCommand() {
     setDefaultCommand(new ArmControl());
   }
+  public void move(double speed) {
+    arm.set(ControlMode.PercentOutput, speed);
+  }
 }
