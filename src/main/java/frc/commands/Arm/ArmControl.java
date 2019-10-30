@@ -4,8 +4,12 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class ArmControl extends Command {
-	public ArmControl() {
+	private boolean forward;
+
+	public ArmControl(boolean forward) {
 		requires(Robot.ARM_SUBSYSTEM);
+
+		this.forward = forward;
 	}
 
 	@Override
@@ -14,6 +18,11 @@ public class ArmControl extends Command {
 
 	@Override
 	protected void execute() {
+		if (forward) {
+			Robot.ARM_SUBSYSTEM.moveArm(1);
+		} else {
+			Robot.ARM_SUBSYSTEM.moveArm(-1);
+		}
 	}
 
 	@Override

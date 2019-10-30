@@ -1,5 +1,6 @@
 package frc.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -20,5 +21,8 @@ public class ArmSubsystem extends Subsystem {
   @Override
   public void initDefaultCommand() {
     setDefaultCommand(new ArmControl());
+  }
+  public void moveArm(double ArmSpeed) {
+    Arm.set(ControlMode.PercentOutput, ArmSpeed);
   }
 }

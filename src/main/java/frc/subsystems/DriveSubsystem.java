@@ -26,4 +26,9 @@ public class DriveSubsystem extends Subsystem {
   public void initDefaultCommand() {
    setDefaultCommand(new DriveWithJoysticks());
   }
+
+  public void move(double LeftSpeed, double RightSpeed) {
+    driveLeft.set(ControlMode.PercentOutput, LeftSpeed);
+    driveRight.set(ControlMode.PercentOutput, RightSpeed);
+  }
 }

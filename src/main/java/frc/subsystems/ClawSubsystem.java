@@ -1,5 +1,6 @@
 package frc.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -19,5 +20,8 @@ public class ClawSubsystem extends Subsystem {
   @Override
   public void initDefaultCommand() {
     setDefaultCommand(new ClawControl());
+  }
+  public void ClawMove(double ClawMove){
+    Claw.set(ControlMode.PercentOutput, ClawMove);
   }
 }

@@ -4,8 +4,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class ClawControl extends Command {
-	public ClawControl() {
+	boolean forward;
+	public ClawControl(boolean forward) {
 		requires(Robot.CLAW_SUBSYSTEM);
+		this.forward = forward;
 	}
 
 	@Override
@@ -14,6 +16,12 @@ public class ClawControl extends Command {
 
 	@Override
 	protected void execute() {
+		if(forward){
+			Robot.CLAW_SUBSYSTEM.ClawMove(1);
+		}
+		else{
+			Robot.CLAW_SUBSYSTEM.ClawMove(0);
+		}
 	}
 
 	@Override
